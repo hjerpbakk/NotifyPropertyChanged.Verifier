@@ -1,0 +1,1 @@
+dotnet build ./NotifyPropertyChanged.Verifier.sln --configuration Release
