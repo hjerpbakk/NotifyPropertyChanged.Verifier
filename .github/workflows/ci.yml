@@ -15,7 +15,16 @@ jobs:
         dotnet-version: 3.0.100
       if: matrix.os == 'macOS-latest' || matrix.os == 'ubuntu-latest'
     - uses: actions/checkout@v1
-    - name: Build with dotnet
-      run: dotnet build ./NotifyPropertyChanged.Verifier.sln --configuration Release
-    - name: Test with dotnet
-      run: dotnet test ./NotifyPropertyChanged.Verifier.sln --configuration Release
+    - name: Build and test
+      run: |
+        chmod +x ci.sh
+        ./ci.sh
+      shell: bash
+    - name: Upload Code Coverage to codecov.io
+      run: |
+        curl -s https://codecov.io/bash > codecov
+        chmod +x codecov
+        ./codecov -f "./CoverageResults/coverage.opencover.xml" -t ${{ secrets.CODECOV_TOKEN }}
+      shell: bash
+      if: matrix.os == 'ubuntu-latest'
+      
