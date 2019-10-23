@@ -20,8 +20,8 @@ jobs:
     - name: Setup Nuget.exe
       uses: warrenbuckley/Setup-Nuget@v1
     - name: Push to NuGet
-      run: nuget push ./nupkgs/*.nupkg -Source https://www.nuget.org/api/v2/package -ApiKey ${{ secrets.NUGET_KEY }}
+      run: nuget push \nupkgs\NotifyPropertyChanged.Verifier.nupkg -Source https://www.nuget.org/api/v2/package -ApiKey ${{ secrets.NUGET_KEY }}
     - name: Add GPR Source
       run: nuget sources add -name "GPR" -Source https://nuget.pkg.github.com/Sankra/index.json -Username Sankra -Password ${{ secrets.GITHUB_TOKEN }}
     - name: Push to GPR
-      run: nuget push ./nupkgs/*.nupkg -Source "GPR" -SkipDuplicate
+      run: nuget push \nupkgs\NotifyPropertyChanged.Verifier.nupkg -Source "GPR" -SkipDuplicate
