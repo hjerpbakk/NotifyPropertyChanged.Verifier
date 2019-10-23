@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotifyPropertyChanged.Verifier", "NotifyPropertyChanged.Verifier\NotifyPropertyChanged.Verifier.csproj", "{0357CE61-DCC1-4DCA-8372-B2877E6F1260}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotifyPropertyChanged.Verifier.Tests", "NotifyPropertyChanged.Verifier.Tests\NotifyPropertyChanged.Verifier.Tests.csproj", "{85B338E4-800D-474A-ACC7-972CA6109646}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotifyPropertyChanged.Verifier.Tests", "Tests\NotifyPropertyChanged.Verifier.Tests\NotifyPropertyChanged.Verifier.Tests.csproj", "{85B338E4-800D-474A-ACC7-972CA6109646}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotifyPropertyChanged.Verifier.AdditionalTests", "NotifyPropertyChanged.Verifier.AdditionalTests\NotifyPropertyChanged.Verifier.AdditionalTests.csproj", "{2290B8FB-A308-4DD2-99C2-64D0535EEACA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotifyPropertyChanged.Verifier.AdditionalTests", "Tests\NotifyPropertyChanged.Verifier.AdditionalTests\NotifyPropertyChanged.Verifier.AdditionalTests.csproj", "{2290B8FB-A308-4DD2-99C2-64D0535EEACA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModels", "ViewModels\ViewModels.csproj", "{E07B532A-5979-4F08-95EF-15854306AD9F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModels", "Tests\ViewModels\ViewModels.csproj", "{E07B532A-5979-4F08-95EF-15854306AD9F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -2,9 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
-    <LangVersion>latest</LangVersion>
-    <Nullable>enable</Nullable>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
@@ -21,10 +18,11 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="ReportGenerator" Version="4.3.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NotifyPropertyChanged.Verifier\NotifyPropertyChanged.Verifier.csproj" />
+    <ProjectReference Include="..\..\NotifyPropertyChanged.Verifier\NotifyPropertyChanged.Verifier.csproj" />
     <ProjectReference Include="..\ViewModels\ViewModels.csproj" />
   </ItemGroup>
 </Project>
