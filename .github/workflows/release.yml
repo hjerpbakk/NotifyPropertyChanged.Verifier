@@ -25,5 +25,5 @@ jobs:
       run: |
         chmod +x pack.sh
         ./pack.sh
-        nuget push ./nupkgs/*.nupkg -ApiKey ${{ secrets.NUGET_KEY }}
+        nuget push ./nupkgs/*.nupkg -Source https://www.nuget.org/api/v2/package -ApiKey ${{ secrets.NUGET_KEY }}
       shell: bash
