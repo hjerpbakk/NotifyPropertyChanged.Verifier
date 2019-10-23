@@ -24,7 +24,6 @@ jobs:
       run: |
         chmod +x pack.sh
         ./pack.sh
-        nuget push ./nupkgs/*.nupkg -Source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NUGET_KEY }}
-        nuget source Add -Name "GitHub" -Source "https://nuget.pkg.github.com/Sankra/index.json" -UserName Sankra -Password ${{ secrets.GITHUB_TOKEN }}
-        nuget push ./nupkgs/*.nupkg -Source "GitHub"
+        dotnet nuget push ./nupkgs/*.nupkg -Source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NUGET_KEY }}
+        dotnet nuget push ./nupkgs/*.nupkg -Source https://nuget.pkg.github.com/Sankra/index.json -ApiKey ${{ secrets.GITHUB_TOKEN }}
       shell: bash
