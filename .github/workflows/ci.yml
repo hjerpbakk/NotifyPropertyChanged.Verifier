@@ -32,11 +32,4 @@ jobs:
         ./codecov -f "./CoverageResults/coverage.opencover.xml" -t ${{ secrets.CODECOV_TOKEN }}
       shell: bash
       if: matrix.os == 'macOS-latest'
-    - name: Publish to NuGet from macOS
-      run: |
-        chmod +x pack.sh
-        ./pack.sh
-        nuget push ./nupkgs/*.nupkg -ApiKey ${{ secrets.NUGET_KEY }}
-      shell: bash
-      if: matrix.os == 'macOS-latest'
       
