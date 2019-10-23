@@ -1,0 +1,29 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build_test_release:
+
+    runs-on: macOS-latest
+    
+    steps:
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1.2.0
+      with:
+        dotnet-version: 3.0.100
+    - uses: actions/checkout@v1
+    - name: Build and test
+      run: |
+        chmod +x ci.sh
+        ./ci.sh
+      shell: bash
+    - name: Publish to NuGet
+      run: |
+        chmod +x pack.sh
+        ./pack.sh
+        nuget push ./nupkgs/*.nupkg -ApiKey ${{ secrets.NUGET_KEY }}
+      shell: bash
