@@ -12,13 +12,16 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build and test
-      run: |
-        ./ci.ps1
+      run: ./ci.ps1
       shell: powershell
-    - name: Publish to NuGet
-      run: |
-        ./pack.ps1
-        nuget push ./nupkgs/*.nupkg -Source https://www.nuget.org/api/v2/package -ApiKey ${{ secrets.NUGET_KEY }}
-        nuget sources add -name "GPR" -Source https://nuget.pkg.github.com/Sankra/index.json -Username Sankra -Password ${{ secrets.GITHUB_TOKEN }}
-        nuget push ./nupkgs/*.nupkg -Source "GPR" -SkipDuplicate
+    - name: Create NuGet-package
+      run: ./pack.ps1
       shell: powershell
+    - name: Setup Nuget.exe
+      uses: warrenbuckley/Setup-Nuget@v1
+    - name: Push to NuGet
+      run: nuget push ./nupkgs/*.nupkg -Source https://www.nuget.org/api/v2/package -ApiKey ${{ secrets.NUGET_KEY }}
+    - name: Add GPR Source
+      run: nuget sources add -name "GPR" -Source https://nuget.pkg.github.com/Sankra/index.json -Username Sankra -Password ${{ secrets.GITHUB_TOKEN }}
+    - name: Push to GPR
+      run: nuget push ./nupkgs/*.nupkg -Source "GPR" -SkipDuplicate
