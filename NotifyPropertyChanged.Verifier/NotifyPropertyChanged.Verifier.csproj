@@ -16,7 +16,7 @@
     <PackageProjectUrl>https://github.com/Sankra/NotifyPropertyChanged.Verifier</PackageProjectUrl>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <Description>Fluent extension of xUnit for testing implementations of INotifyPropertyChanged in ViewModels.</Description>
-    <PackageVersion>1.0.0-beta2</PackageVersion>
+    <PackageVersion>1.0.0</PackageVersion>
     <Summary>Fluent extension of xUnit for testing implementations of INotifyPropertyChanged in ViewModels.</Summary>
     <Title>NotifyPropertyChanged.Verifier</Title>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
