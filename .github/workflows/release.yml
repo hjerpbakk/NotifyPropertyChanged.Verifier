@@ -1,10 +1,9 @@
 name: Release
 
 on:
-  push:
-    branches:
-      - master
-
+  release:
+    types: [published, prereleased]
+  
 jobs:
   build_test_release:
 
