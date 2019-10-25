@@ -80,3 +80,5 @@ namespace Tests {
 ```
 
 The library consists of two extension methods on INotifyPropertyChanged, `ShouldNotifyOn` and `ShouldNotNotifyOn` which takes 1 or more property expressions as input. These are the properties that should either receive or not receive a NotifyPropertyChanged-event when an `Action<T>` is called by the `When` method. This can anything, not only methods or properties on the ViewModel itself.
+
+Inspired by this [blogpost](https://blog.ploeh.dk/2009/08/06/AFluentInterfaceForTestingINotifyPropertyChanged/).
