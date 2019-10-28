@@ -4,6 +4,8 @@ Introducing [NotifyPropertyChanged.Verifier](https://www.nuget.org/packages/Noti
 
 [![Build status](https://github.com/sankra/NotifyPropertyChanged.Verifier/workflows/CI/badge.svg)](https://github.com/Sankra/NotifyPropertyChanged.Verifier/actions) [![codecov](https://codecov.io/gh/Sankra/NotifyPropertyChanged.Verifier/branch/master/graph/badge.svg)](https://codecov.io/gh/Sankra/NotifyPropertyChanged.Verifier) [![codecov](https://img.shields.io/nuget/v/NotifyPropertyChanged.Verifier.svg)](https://www.nuget.org/packages/NotifyPropertyChanged.Verifier) [![codecov](https://img.shields.io/nuget/dt/NotifyPropertyChanged.Verifier.svg)](https://www.nuget.org/packages/NotifyPropertyChanged.Verifier)
 
+![mvvm](/doc/mvvm.svg)
+
 ## tl;dr
 
 ```csharp
@@ -80,5 +82,6 @@ namespace Tests {
 ```
 
 The library consists of two extension methods on INotifyPropertyChanged, `ShouldNotifyOn` and `ShouldNotNotifyOn` which takes 1 or more property expressions as input. These are the properties that should either receive or not receive a NotifyPropertyChanged-event when an `Action<T>` is called by the `When` method. This can anything, not only methods or properties on the ViewModel itself.
+
 
 Inspired by this [blogpost](https://blog.ploeh.dk/2009/08/06/AFluentInterfaceForTestingINotifyPropertyChanged/).
