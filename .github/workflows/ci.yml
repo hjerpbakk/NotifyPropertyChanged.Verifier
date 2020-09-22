@@ -25,7 +25,7 @@ jobs:
       run: ./ci.ps1
       shell: powershell
       if: matrix.os == 'windows-latest'
-    - name: Upload Code Coverage to codecov.io from macOS
+    - name: Upload Code Coverage to codecov.io
       run: |
         curl -s https://codecov.io/bash > codecov
         chmod +x codecov
