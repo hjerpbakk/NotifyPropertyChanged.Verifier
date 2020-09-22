@@ -7,6 +7,7 @@
         <LangVersion>8.0</LangVersion>
         <Nullable>enable</Nullable>
         <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <IsPackable>true</IsPackable>
         <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(MSBuildThisFileName).xml</DocumentationFile>
         <Authors>Runar Ovesen Hjerpbakk</Authors>
         <Copyright>© 2019-2020 Runar Ovesen Hjerpbakk</Copyright>
