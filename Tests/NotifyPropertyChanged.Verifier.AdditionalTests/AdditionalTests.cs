@@ -1,16 +1,17 @@
 using System;
+using System.Threading.Tasks;
 using NotifyPropertyChanged.Verifier.Tests.ViewModels;
 using Xunit;
 
 namespace NotifyPropertyChanged.Verifier.AdditionalTests
 {
-    public class AdditionalTests
+    public sealed class AdditionalTests
     {
         [Fact]
         public void ShouldNotifyOn_ViewModelIsNull_Fails()
         {
             ViewModel nullVM = null;
-            
+
             Assert.Throws<ArgumentNullException>(() =>
                 nullVM.ShouldNotifyOn(vm => vm.PropertyWithNotify).
                     When(vm => vm.PropertyWithNotify = 42));
@@ -47,7 +48,17 @@ namespace NotifyPropertyChanged.Verifier.AdditionalTests
         {
             Assert.Throws<ArgumentNullException>(() =>
                 new ViewModel().ShouldNotifyOn(vm => vm.PropertyWithoutNotify).
-                    When(null));
+                    When((Func<ViewModel, Task>)null));
+            Assert.Throws<ArgumentNullException>(() =>
+                new ViewModel().ShouldNotifyOn(vm => vm.PropertyWithoutNotify).
+                    When((Func<ViewModel, ValueTask>)null));
+            Assert.Throws<ArgumentNullException>(() =>
+                new ViewModel().ShouldNotifyOn(vm => vm.PropertyWithoutNotify).
+                    When((Action<ViewModel>)null));
         }
+
+        [Fact]
+        public void Throws()
+            => Assert.Throws<ArgumentException>(() => new ViewModel().ShouldNotifyOn(vm => new object()));
     }
 }

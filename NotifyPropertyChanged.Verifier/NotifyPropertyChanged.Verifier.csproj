@@ -1,36 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
-    <LangVersion>8.0</LangVersion>
-    <Nullable>enable</Nullable>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(MSBuildThisFileName).xml</DocumentationFile>
-
-    <Authors>Runar Ovesen Hjerpbakk</Authors>
-    <Copyright>© 2019 Runar Ovesen Hjerpbakk</Copyright>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Owners>Runar Ovesen Hjerpbakk</Owners>
-    <PackageProjectUrl>https://github.com/Sankra/NotifyPropertyChanged.Verifier</PackageProjectUrl>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <Description>Fluent extension of xUnit for testing implementations of INotifyPropertyChanged in ViewModels.</Description>
-    <PackageVersion>1.0.2</PackageVersion>
-    <Summary>Fluent extension of xUnit for testing implementations of INotifyPropertyChanged in ViewModels.</Summary>
-    <Title>NotifyPropertyChanged.Verifier</Title>
-    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
-    <PackageId>NotifyPropertyChanged.Verifier</PackageId>
-    <tags>xUnit INotifyPropertyChanged Xamarin.Forms WPF UWP</tags>
-    <PackageIcon>icon.png</PackageIcon>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="xunit" Version="2.2.0" />
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta2-19367-01" PrivateAssets="All"/>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="..\doc\icon.png" Pack="true" PackagePath="\"/>
-  </ItemGroup>
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <FileVersion>1.0.0.0</FileVersion>
+        <LangVersion>8.0</LangVersion>
+        <Nullable>enable</Nullable>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(MSBuildThisFileName).xml</DocumentationFile>
+        <Authors>Runar Ovesen Hjerpbakk</Authors>
+        <Copyright>© 2019-2020 Runar Ovesen Hjerpbakk</Copyright>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <Owners>Runar Ovesen Hjerpbakk</Owners>
+        <PackageProjectUrl>https://github.com/Sankra/NotifyPropertyChanged.Verifier</PackageProjectUrl>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <Description>Fluent extension of xUnit for testing implementations of INotifyPropertyChanged in ViewModels.</Description>
+        <PackageVersion>1.1.0</PackageVersion>
+        <Summary>Fluent extension of xUnit for testing implementations of INotifyPropertyChanged in ViewModels.</Summary>
+        <Title>NotifyPropertyChanged.Verifier</Title>
+        <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+        <PackageId>NotifyPropertyChanged.Verifier</PackageId>
+        <tags>xUnit INotifyPropertyChanged Xamarin.Forms WPF UWP</tags>
+        <PackageIcon>icon.png</PackageIcon>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="xunit" Version="2.4.1" />
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="..\doc\icon.png" Pack="true" PackagePath="\" />
+    </ItemGroup>
 </Project>
