@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 
 namespace NotifyPropertyChanged.Verifier.Tests.ViewModels
 {
@@ -23,7 +24,7 @@ namespace NotifyPropertyChanged.Verifier.Tests.ViewModels
                 Set(ref backingField2, value);
             }
         }
-                
+
         public string PropertyWithSuperfluousNotifies
         {
             get => backingField2;
@@ -35,6 +36,12 @@ namespace NotifyPropertyChanged.Verifier.Tests.ViewModels
         }
 
         public int PropertyWithoutNotify { get; set; }
+
+        public async Task UpdatePropertyUsingTask(int newValue)
+            => await Task.Run(() => PropertyWithNotify = newValue);
+
+        public async ValueTask UpdatePropertyUsingValueTask(int newValue)
+            => await Task.Run(() => PropertyWithNotify = newValue);
 
         public event PropertyChangedEventHandler PropertyChanged;
 

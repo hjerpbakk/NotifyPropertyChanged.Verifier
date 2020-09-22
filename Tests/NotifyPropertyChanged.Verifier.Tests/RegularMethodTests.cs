@@ -4,11 +4,11 @@ using Xunit.Sdk;
 
 namespace NotifyPropertyChanged.Verifier.Tests
 {
-    public class UnitTests
+    public sealed class RegularMethodTests
     {
         readonly ViewModel vm;
 
-        public UnitTests() => vm = new ViewModel();
+        public RegularMethodTests() => vm = new ViewModel();
 
         [Fact]
         public void ShouldNotifyOn_PropertyDoesNotNotify_Fails()
@@ -21,8 +21,8 @@ namespace NotifyPropertyChanged.Verifier.Tests
         [Fact]
         public void ShouldNotifyOn_PropertyNotifies_Succeeds()
         {
-           vm.ShouldNotifyOn(vm => vm.PropertyWithNotify).
-                   When(vm => vm.PropertyWithNotify = 42);
+            vm.ShouldNotifyOn(vm => vm.PropertyWithNotify).
+               When(vm => vm.PropertyWithNotify = 42);
         }
 
         [Fact]
@@ -37,7 +37,7 @@ namespace NotifyPropertyChanged.Verifier.Tests
         public void ShouldNotNotifyOn_PropertyDoesNotNotify_Succeeds()
         {
             vm.ShouldNotNotifyOn(vm => vm.PropertyWithoutNotify).
-                      When(vm => vm.PropertyWithoutNotify = 42);
+               When(vm => vm.PropertyWithoutNotify = 42);
         }
 
         [Fact]
@@ -52,14 +52,14 @@ namespace NotifyPropertyChanged.Verifier.Tests
         public void ShouldNotifyOn_PropertyWithMultipleNotifies_Succeeds()
         {
             vm.ShouldNotifyOn(vm => vm.PropertyWithNotify, vm => vm.PropertyWithMultipleNotifies).
-                   When(vm => vm.PropertyWithMultipleNotifies = "42");
+               When(vm => vm.PropertyWithMultipleNotifies = "42");
         }
 
         [Fact]
         public void ShouldNotifyOn_PropertyWithSuperfluousNotifies_Succeeds()
         {
             vm.ShouldNotifyOn(vm => vm.PropertyWithNotify, vm => vm.PropertyWithMultipleNotifies).
-                   When(vm => vm.PropertyWithSuperfluousNotifies = "42");
+               When(vm => vm.PropertyWithSuperfluousNotifies = "42");
         }
 
         [Fact]
@@ -69,14 +69,14 @@ namespace NotifyPropertyChanged.Verifier.Tests
                 vm.ShouldNotNotifyOn(vm => vm.PropertyWithNotify).
                    When(vm => vm.PropertyWithNotify = 42));
             vm.ShouldNotNotifyOn(vm => vm.PropertyWithoutNotify).
-                      When(vm => vm.PropertyWithoutNotify = 42);
+               When(vm => vm.PropertyWithoutNotify = 42);
         }
 
         [Fact]
         public void BothNotifyAndNotWithSameViewModel_SingleNotify_Works2()
         {
             vm.ShouldNotNotifyOn(vm => vm.PropertyWithoutNotify).
-                      When(vm => vm.PropertyWithoutNotify = 42);
+               When(vm => vm.PropertyWithoutNotify = 42);
             Assert.Throws<FalseException>(() =>
                 vm.ShouldNotNotifyOn(vm => vm.PropertyWithNotify).
                    When(vm => vm.PropertyWithNotify = 42));

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace NotifyPropertyChanged.Verifier
@@ -38,11 +39,11 @@ namespace NotifyPropertyChanged.Verifier
             {
                 throw new ArgumentNullException(nameof(action));
             }
-            
+
             owner.PropertyChanged += StoreNotifiedProperties;
             action(owner);
             owner.PropertyChanged -= StoreNotifiedProperties;
-            
+
             for (int i = 0; i < wasNotified.Length; i++)
             {
                 if (eventExpected)
@@ -54,6 +55,38 @@ namespace NotifyPropertyChanged.Verifier
                     Assert.False(wasNotified[i], $"{propertyNames[i]} was notitied.");
                 }
             }
+        }
+
+        /// <summary>
+        /// Runs the supplied async method and verifies that the specifed
+        /// <see cref="INotifyPropertyChanged"/> events are either raised or not raised
+        /// based on the earlier specified expectations.
+        /// </summary>
+        /// <param name="func"></param>
+        public void When(Func<TViewModel, Task> func)
+        {
+            if (func == null)
+            {
+                throw new ArgumentNullException(nameof(func));
+            }
+
+            When(vm => func(vm).GetAwaiter().GetResult());
+        }
+
+        /// <summary>
+        /// Runs the supplied async method and verifies that the specifed
+        /// <see cref="INotifyPropertyChanged"/> events are either raised or not raised
+        /// based on the earlier specified expectations. 
+        /// </summary>
+        /// <param name="func"></param>
+        public void When(Func<TViewModel, ValueTask> func)
+        {
+            if (func == null)
+            {
+                throw new ArgumentNullException(nameof(func));
+            }
+
+            When(vm => func(vm).GetAwaiter().GetResult());
         }
 
         private void StoreNotifiedProperties(object sender, PropertyChangedEventArgs e)

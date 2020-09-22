@@ -2,5 +2,5 @@
 set -e
 ./build.sh
 ./test.sh
-dotnet ~/.nuget/packages/reportgenerator/4.3.0/tools/netcoreapp2.1/ReportGenerator.dll -reports:./CoverageResults/coverage.opencover.xml -targetdir:./CoverageResults
-open ./CoverageResults/index.htm
+dotnet ~/.nuget/packages/reportgenerator/4.6.7/tools/netcoreapp3.0/ReportGenerator.dll -reports:./Tests/CoverageResults/coverage.opencover.xml -targetdir:./Tests/CoverageResults
+open ./Tests/CoverageResults/index.htm
