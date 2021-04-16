@@ -28,7 +28,7 @@ namespace NotifyPropertyChanged.Verifier
             => CreateExpectation(owner, property, additionalProperties, true);
 
         /// <summary>
-        /// Creates an excpectation that the view model should not raise <see cref="INotifyPropertyChanged"/>
+        /// Creates an expectation that the view model should not raise <see cref="INotifyPropertyChanged"/>
         /// events for the given properties. At least on property must be specified.
         /// </summary>
         /// <typeparam name="TViewModel">The type of the view model being tested.</typeparam>
