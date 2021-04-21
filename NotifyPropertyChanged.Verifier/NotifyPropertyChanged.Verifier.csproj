@@ -10,13 +10,13 @@
         <IsPackable>true</IsPackable>
         <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(MSBuildThisFileName).xml</DocumentationFile>
         <Authors>Runar Ovesen Hjerpbakk</Authors>
-        <Copyright>© 2019-2020 Runar Ovesen Hjerpbakk</Copyright>
+        <Copyright>© 2019-2021 Runar Ovesen Hjerpbakk</Copyright>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <Owners>Runar Ovesen Hjerpbakk</Owners>
         <PackageProjectUrl>https://github.com/Sankra/NotifyPropertyChanged.Verifier</PackageProjectUrl>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
         <Description>Fluent extension of xUnit for testing implementations of INotifyPropertyChanged in ViewModels.</Description>
-        <PackageVersion>1.1.0</PackageVersion>
+        <PackageVersion>1.1.1</PackageVersion>
         <Summary>Fluent extension of xUnit for testing implementations of INotifyPropertyChanged in ViewModels.</Summary>
         <Title>NotifyPropertyChanged.Verifier</Title>
         <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
